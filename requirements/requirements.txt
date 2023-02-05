@@ -1,0 +1,10 @@
+numpy
+pandas
+pydantic
+scikit-learn
+strictyaml
+joblib
+flask
+requests
+joblib
+gunicorn

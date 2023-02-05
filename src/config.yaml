@@ -1,0 +1,33 @@
+# Package ID
+package_name: course_recommender
+
+# Data Files
+train_data: train.csv
+test_data: test.csv
+
+# Variables
+# Target variable
+target: course
+
+model: course_recommender_model
+model_file_name: course_recommender_model_file_v
+
+features:
+  - gender
+  - stream
+  - subject
+  - marks
+  
+# train-test split
+test_size: 0.2
+
+# random state(seed)
+random_state: 786
+
+categorical_vars:
+  - gender
+  - stream
+  - subject
+
+numerical_vars:
+  - marks
