@@ -15,9 +15,7 @@ MODEL_REPOSITORY = PACKAGE_ROOT / "models"
 
 
 class AppConfig(BaseModel):
-    """
-    Application-level config.
-    """
+    """Application-level config."""
 
     package_name: str
     train_data: str
@@ -26,9 +24,7 @@ class AppConfig(BaseModel):
 
 
 class ModelConfig(BaseModel):
-    """
-    All configuration relevant to model training.
-    """
+    """All configuration relevant to model training."""
 
     target: str
     features: List[str]
