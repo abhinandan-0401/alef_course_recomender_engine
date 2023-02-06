@@ -74,4 +74,4 @@ sudo bash docker_build_run.sh
 ```
 
 The model is exposed to an end-point for predictions. The model metrics can be seen as a response of a successful training.
-![Model Training Response](./test/train_response.png)
+![Model Training Response](https://github.com/abhinandan-0401/alef_course_recomender_engine/blob/main/test/train_response.png)
