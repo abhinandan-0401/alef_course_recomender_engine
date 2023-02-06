@@ -28,7 +28,7 @@ Run logs are present at this location -->> ./logs/app.log
 
 ## Functional Test Results
 The model is used for predicting on the 3 functional test-cases. 
-![Functional Test Predictions](./test/infer.png)
+![Functional Test Predictions](test/infer.png)
 
 ## Run With Docker
 
@@ -42,8 +42,8 @@ ENTRYPOINT ["python", "-u", "train.py"]
 and docker_build_run
 
 ```
-# sudo docker build . -t course_recommender_train
-# sudo docker run --rm course_recommender_train
+sudo docker build . -t course_recommender_train
+sudo docker run --rm course_recommender_train
 ```
 run the bash script on your terminal
 
@@ -52,7 +52,7 @@ sudo bash docker_build_run.sh
 ```
 
 The model can be trained on the training end-point. The model metrics can be seen as a response of a successful training.
-![Model Training Response](./test/train_response.png)
+![Model Training Response](test/train_response.png)
 
 #### Prediction
 Select the appropriate lines of code in the Dockerfile
@@ -64,8 +64,8 @@ ENTRYPOINT ["python", "-u", "infer.py"]
 and docker_build_run
 
 ```
-# sudo docker build . -t course_recommender_infer
-# sudo docker run --rm course_recommender_infer
+sudo docker build . -t course_recommender_infer
+sudo docker run --rm course_recommender_infer
 ```
 run the bash script on your terminal
 
@@ -73,13 +73,5 @@ run the bash script on your terminal
 sudo bash docker_build_run.sh
 ```
 
-The model is exposed to an end-point for predictions. 
-
-
-
-
-
-
-
-The model metrics can be seen as a response of a successful training.
+The model is exposed to an end-point for predictions. The model metrics can be seen as a response of a successful training.
 ![Model Training Response](./test/train_response.png)
