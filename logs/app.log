@@ -1,0 +1,88 @@
+2023-02-06 02:53:51,989 — model_predict — ERROR — Specifying the columns using strings is only supported for pandas DataFrames
+Traceback (most recent call last):
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/joblib/parallel.py", line 822, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "/home/jdips/anaconda3/lib/python3.9/queue.py", line 168, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jdips/Alef_test/alef_course_recomender_engine/src/modules/model.py", line 208, in predict
+    y_pred = self.model.predict(X)
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/sklearn/utils/metaestimators.py", line 120, in <lambda>
+    out = lambda *args, **kwargs: self.fn(obj, *args, **kwargs)
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/sklearn/pipeline.py", line 418, in predict
+    Xt = transform.transform(Xt)
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/sklearn/compose/_column_transformer.py", line 564, in transform
+    Xs = self._fit_transform(X, None, _transform_one, fitted=True)
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/sklearn/compose/_column_transformer.py", line 434, in _fit_transform
+    return Parallel(n_jobs=self.n_jobs)(
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/joblib/parallel.py", line 1043, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/joblib/parallel.py", line 833, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/sklearn/compose/_column_transformer.py", line 437, in <genexpr>
+    X=_safe_indexing(X, column, axis=1),
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/sklearn/utils/__init__.py", line 336, in _safe_indexing
+    raise ValueError(
+ValueError: Specifying the columns using strings is only supported for pandas DataFrames
+2023-02-06 02:53:52,115 — train_get_model_metrics — ERROR — local variable 'y_pred' referenced before assignment
+Traceback (most recent call last):
+  File "/home/jdips/Alef_test/alef_course_recomender_engine/train.py", line 38, in get_model_metrics
+    y_pred = model.predict(X)
+  File "/home/jdips/Alef_test/alef_course_recomender_engine/src/modules/model.py", line 212, in predict
+    return y_pred
+UnboundLocalError: local variable 'y_pred' referenced before assignment
+2023-02-06 02:56:49,988 — train_get_model_metrics — ERROR — Specifying the columns using strings is only supported for pandas DataFrames
+Traceback (most recent call last):
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/joblib/parallel.py", line 822, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "/home/jdips/anaconda3/lib/python3.9/queue.py", line 168, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jdips/Alef_test/alef_course_recomender_engine/train.py", line 38, in get_model_metrics
+    y_pred = model.predict(X)
+  File "/home/jdips/Alef_test/alef_course_recomender_engine/src/modules/model.py", line 203, in predict
+    return self.model.predict(X)
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/sklearn/utils/metaestimators.py", line 120, in <lambda>
+    out = lambda *args, **kwargs: self.fn(obj, *args, **kwargs)
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/sklearn/pipeline.py", line 418, in predict
+    Xt = transform.transform(Xt)
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/sklearn/compose/_column_transformer.py", line 564, in transform
+    Xs = self._fit_transform(X, None, _transform_one, fitted=True)
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/sklearn/compose/_column_transformer.py", line 434, in _fit_transform
+    return Parallel(n_jobs=self.n_jobs)(
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/joblib/parallel.py", line 1043, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/joblib/parallel.py", line 833, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/sklearn/compose/_column_transformer.py", line 437, in <genexpr>
+    X=_safe_indexing(X, column, axis=1),
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/sklearn/utils/__init__.py", line 336, in _safe_indexing
+    raise ValueError(
+ValueError: Specifying the columns using strings is only supported for pandas DataFrames
+2023-02-06 03:08:56,599 — dataloader_get_prediction_data — ERROR — Working outside of request context.
+
+This typically means that you attempted to use functionality that needed
+an active HTTP request.  Consult the documentation on testing for
+information about how to avoid this problem.
+Traceback (most recent call last):
+  File "/home/jdips/Alef_test/alef_course_recomender_engine/src/modules/dataloader.py", line 68, in get_prediction_data
+    jsonfile = request.get_json()
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/werkzeug/local.py", line 432, in __get__
+    obj = instance._get_current_object()
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/werkzeug/local.py", line 554, in _get_current_object
+    return self.__local()  # type: ignore
+  File "/home/jdips/anaconda3/lib/python3.9/site-packages/flask/globals.py", line 38, in _lookup_req_object
+    raise RuntimeError(_request_ctx_err_msg)
+RuntimeError: Working outside of request context.
+
+This typically means that you attempted to use functionality that needed
+an active HTTP request.  Consult the documentation on testing for
+information about how to avoid this problem.

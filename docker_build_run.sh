@@ -1,2 +1,7 @@
-sudo docker build . -t tm:1.0
-sudo docker run --rm train.py
+# When training
+# sudo docker build . -t course_recommender_train
+# sudo docker run --rm course_recommender_train
+
+# When predicting
+sudo docker build . -t course_recommender_infer
+sudo docker run --rm course_recommender_infer

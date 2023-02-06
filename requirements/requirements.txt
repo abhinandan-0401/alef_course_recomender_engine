@@ -1,10 +1,10 @@
 numpy
 pandas
 pydantic
-scikit-learn
 strictyaml
 joblib
 flask
 requests
 joblib
 gunicorn
+scikit-learn==0.24.2

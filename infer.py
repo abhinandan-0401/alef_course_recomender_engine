@@ -1,11 +1,10 @@
 from typing import List, Union
 
-import numpy as np
-import pandas as pd
 from flask import Flask, jsonify, request
 
 from src import __version__ as _version
 from src.config.config import config
+from src.modules.dataloader import DataLoader
 from src.modules.model import load_model
 from src.modules.validate import validate_inputs
 
@@ -19,8 +18,8 @@ model = load_model(model_file_name)
 def get_predictions() -> dict:
     """Make a prediction using a saved model."""
 
-    jsonfile = request.get_json()
-    data = pd.DataFrame(jsonfile)
+    dataloader = DataLoader(config)
+    data = dataloader.get_prediction_data(request)
 
     validated_data, errors = validate_inputs(input_data=data)
     results = {"predictions": None, "version": _version, "errors": errors}
@@ -40,5 +39,5 @@ def get_predictions() -> dict:
     return jsonify(results)
 
 
-# if __name__ == "__main__":
-#     app.run(debug=True, host='0.0.0.0')
+if __name__ == "__main__":
+    app.run(debug=True, host='0.0.0.0')
