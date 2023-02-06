@@ -28,7 +28,7 @@ Run logs are present at this location -->> ./logs/app.log
 
 ## Functional Test Results
 The model is used for predicting on the 3 functional test-cases. 
-![Functional Test Predictions](test/infer.png)
+![Functional Test Predictions](infer.png)
 
 ## Run With Docker
 
@@ -52,7 +52,7 @@ sudo bash docker_build_run.sh
 ```
 
 The model can be trained on the training end-point. The model metrics can be seen as a response of a successful training.
-![Model Training Response](test/train_response.png)
+![Model Training Response](train_response.png)
 
 #### Prediction
 Select the appropriate lines of code in the Dockerfile
@@ -72,6 +72,3 @@ run the bash script on your terminal
 ```
 sudo bash docker_build_run.sh
 ```
-
-The model is exposed to an end-point for predictions. The model metrics can be seen as a response of a successful training.
-![Model Training Response](https://github.com/abhinandan-0401/alef_course_recomender_engine/blob/main/test/train_response.png)
